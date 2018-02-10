@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         const val DEFAULT_OPTIONS = R.id.action_deals
     }
 
-    val fragments : HashMap<Int, Fragment> = hashMapOf(
+    private val fragments : HashMap<Int, Fragment> = hashMapOf(
             Pair(R.id.action_deals, DealsFragment()),
             Pair(R.id.action_top_rated, TopRatedFragment()),
             Pair(R.id.action_most_owned, TopOwnedFragment())
@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
             if (fragment != null){
                 replaceErrorFragment( fragment )
             }
-
 
             true
         }
