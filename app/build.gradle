@@ -4,6 +4,9 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+//It's necessary to able DataBinding
+//apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -13,12 +16,18 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    //It's necessary to able DataBinding
+    dataBinding{
+        enabled = true
     }
 }
 
@@ -31,8 +40,13 @@ dependencies {
 
     //This implementation do able Navigation Bar Button
     implementation 'com.android.support:design:26.1.0'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation project(':commons')
+
+    //This dependency able DataBind
+    kapt 'com.android.databinding:compiler:3.0.1'
+
 }

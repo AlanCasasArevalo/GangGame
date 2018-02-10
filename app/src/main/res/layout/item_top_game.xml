@@ -57,6 +57,9 @@
             android:textColor="@color/blue_gray"
             android:textSize="12sp"
             android:textStyle="bold"
+            android:drawableLeft="@drawable/ic_steam_rating"
+            android:drawablePadding="4dp"
+            android:padding="4dp"
             app:layout_constraintStart_toStartOf="@+id/labelPublisher"
             app:layout_constraintTop_toBottomOf="@+id/labelPublisher"
             tools:text="50" />
@@ -91,7 +94,7 @@
             tools:text="Valve" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/labelOwners"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -99,11 +102,14 @@
             android:textColor="@color/blue_gray"
             tools:text="102039394043"
             android:textStyle="bold"
+            android:drawableLeft="@drawable/ic_owners"
+            android:drawablePadding="4dp"
+            android:padding="4dp"
             app:layout_constraintBaseline_toBaselineOf="@+id/labelSteamRatings"
             app:layout_constraintStart_toEndOf="@+id/labelSteamRatings" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/labelPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -120,7 +126,7 @@
             />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/position"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"

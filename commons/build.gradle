@@ -2,6 +2,10 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+//It's necessary to able DataBinding
+//apply plugin: 'kotlin-kapt'
+
+
 android {
     compileSdkVersion 26
 
@@ -24,6 +28,10 @@ android {
         }
     }
 
+    //It's necessary to able DataBinding
+    dataBinding{
+        enabled = true
+    }
 }
 
 dependencies {
@@ -34,6 +42,9 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:recyclerview-v7:26.1.0'
+
+    //This dependency able DataBind
+    kapt 'com.android.databinding:compiler:3.0.1'
 }
 repositories {
     mavenCentral()
