@@ -1,5 +1,6 @@
-package alancasasarevalo.com.commons
+package alancasasarevalo.com.commons.Fragments
 
+import alancasasarevalo.com.commons.R
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView

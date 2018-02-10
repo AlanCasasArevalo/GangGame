@@ -1,8 +1,7 @@
 package alancasasarevalo.com.ganggame.rated
 
-import alancasasarevalo.com.commons.GenericFragment
+import alancasasarevalo.com.commons.Fragments.GenericFragment
 import alancasasarevalo.com.ganggame.R
-import android.app.Fragment
 
 class TopRatedFragment : GenericFragment(){
     override fun getLayoutResId(): Int {
