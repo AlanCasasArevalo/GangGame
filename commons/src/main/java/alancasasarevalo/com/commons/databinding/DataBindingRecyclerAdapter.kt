@@ -1,4 +1,4 @@
-package alancasasarevalo.com.commons
+package alancasasarevalo.com.commons.databinding
 
 import android.databinding.DataBindingUtil
 import android.databinding.ViewDataBinding
@@ -6,7 +6,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 
-class DataBindingRecyclerAdapter <Model>(val itemVariableId: Int, val itemLayoutResId: Int) :RecyclerView.Adapter<DataBindingViewHolder <Model>>()  {
+class DataBindingRecyclerAdapter <Model>(val itemVariableId: Int, val itemLayoutResId: Int) :RecyclerView.Adapter<DataBindingViewHolder<Model>>()  {
 
     val items : MutableList<Model> = mutableListOf()
 

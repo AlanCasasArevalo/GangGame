@@ -1,4 +1,4 @@
-package alancasasarevalo.com.commons.Extensions
+package alancasasarevalo.com.commons.extensions
 
 import android.view.LayoutInflater
 import android.view.View

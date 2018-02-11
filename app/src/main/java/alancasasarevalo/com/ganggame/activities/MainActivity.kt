@@ -1,8 +1,9 @@
-package alancasasarevalo.com.ganggame
+package alancasasarevalo.com.ganggame.activities
 
-import alancasasarevalo.com.ganggame.deals.DealsFragment
-import alancasasarevalo.com.ganggame.owned.TopOwnedFragment
-import alancasasarevalo.com.ganggame.rated.TopRatedFragment
+import alancasasarevalo.com.ganggame.R
+import alancasasarevalo.com.ganggame.fragments.DealsFragment
+import alancasasarevalo.com.ganggame.fragments.TopOwnedFragment
+import alancasasarevalo.com.ganggame.fragments.TopRatedFragment
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
@@ -30,7 +31,6 @@ class MainActivity : AppCompatActivity() {
 
         navigationView.setOnNavigationItemSelectedListener{item ->
             val fragment : Fragment? = fragments[item.itemId]
-
 
             if (fragment != null){
                 replaceErrorFragment( fragment )

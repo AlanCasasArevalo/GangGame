@@ -1,166 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="126dp"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardBackgroundColor="@color/colorPrimaryDark"
-    >
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <android.support.constraint.ConstraintLayout
+    <data>
+        <variable
+            name="deal"
+            type="alancasasarevalo.com.ganggame.Models.Deal" />
+    </data>
+
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="8dp">
+        android:layout_height="126dp"
+        app:cardBackgroundColor="@color/colorPrimaryDark">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp">
 
 
-        <ImageView
-            android:id="@+id/imgThumb"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="h,1:0.5"
-            app:layout_constraintEnd_toStartOf="@+id/guideline"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_thumb_demo" />
+            <ImageView
+                android:id="@+id/imgThumb"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="h,1:0.5"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:imageURL="@{ deal.thumb }"
 
-        <android.support.constraint.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.25" />
+                android:contentDescription="@string/game_image"
+                />
 
-        <TextView
-            android:id="@+id/labelTitle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:maxLines="2"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Silent of the sleep Silent of the sleep Silent of the sleep" />
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.25" />
 
-        <TextView
-            android:id="@+id/labelRatings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/label_ratings"
-            android:textColor="@color/colorAccent"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/labelTitle"
-            app:layout_constraintTop_toBottomOf="@+id/labelTitle" />
+            <TextView
+                android:id="@+id/labelTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:maxLines="2"
+                android:text="@{ deal.title }"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Silent of the sleep Silent of the sleep Silent of the sleep" />
 
-        <TextView
-            android:id="@+id/labelMetacriticScore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:textColor="@color/blue_gray"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:drawableLeft="@drawable/ic_metacritic_rating"
-            android:padding="4dp"
-            android:drawablePadding="4dp"
-            app:layout_constraintStart_toStartOf="@+id/labelRatings"
-            app:layout_constraintTop_toBottomOf="@+id/labelRatings"
-            tools:text="50" />
+            <TextView
+                android:id="@+id/labelRatings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/label_ratings"
+                android:textColor="@color/colorAccent"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/labelTitle"
+                app:layout_constraintTop_toBottomOf="@+id/labelTitle" />
 
-        <TextView
-            android:id="@+id/labelSteamRatings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:textColor="@color/blue_gray"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:drawableLeft="@drawable/ic_steam_rating"
-            android:padding="4dp"
-            android:drawablePadding="4dp"
-            app:layout_constraintStart_toEndOf="@+id/labelMetacriticScore"
-            app:layout_constraintTop_toTopOf="@+id/labelMetacriticScore"
-            tools:text="50" />
+            <TextView
+                android:id="@+id/labelMetacriticScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:drawableStart="@drawable/ic_metacritic_rating"
+                android:drawablePadding="4dp"
+                android:padding="4dp"
+                android:text="@{ String.valueOf(deal.metacriticScore) }"
+                android:textColor="@color/blue_gray"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/labelRatings"
+                app:layout_constraintTop_toBottomOf="@+id/labelRatings"
+                tools:text="50" />
 
-        <android.support.constraint.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.67" />
+            <TextView
+                android:id="@+id/labelSteamRatings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:drawableStart="@drawable/ic_steam_rating"
+                android:drawablePadding="4dp"
+                android:padding="4dp"
+                android:text="@{ String.valueOf(deal.steamRating) }"
+                android:textColor="@color/blue_gray"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/labelMetacriticScore"
+                app:layout_constraintTop_toTopOf="@+id/labelMetacriticScore"
+                tools:text="50" />
 
-        <android.support.constraint.Guideline
-            android:id="@+id/guideline3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5" />
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.67" />
 
-        <TextView
-            android:id="@+id/labelDealPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="@string/label_deal_prices"
-            android:textColor="@color/blue_gray"
-            android:textStyle="bold"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline3"
-            app:layout_constraintEnd_toEndOf="parent" />
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.5" />
 
+            <TextView
+                android:id="@+id/labelDealPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/label_deal_prices"
+                android:textColor="@color/blue_gray"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/guideline3"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-        <TextView
-            android:id="@+id/labelPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="50.99€"
-            android:textColor="@color/colorAccent"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/labelDealPrice"
-            app:layout_constraintStart_toStartOf="@+id/labelDealPrice"
-            app:layout_constraintTop_toTopOf="@+id/guideline3" />
+            <TextView
+                android:id="@+id/labelPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{ deal.salePriceFormatted }"
+                android:textColor="@color/colorAccent"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/labelDealPrice"
+                app:layout_constraintStart_toStartOf="@+id/labelDealPrice"
+                app:layout_constraintTop_toTopOf="@+id/guideline3"
+                tools:text="50.99€" />
 
-        <TextView
-            android:id="@+id/labelOriginal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginStart="4dp"
-            android:text="@string/label_original"
-            android:textColor="@color/blue_gray"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toTopOf="@+id/labelOriginalPrices"
-            app:layout_constraintEnd_toStartOf="@+id/labelDealPrice"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toTopOf="@+id/guideline3" />
+            <TextView
+                android:id="@+id/labelOriginal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginStart="4dp"
+                android:text="@string/label_original"
+                android:textColor="@color/blue_gray"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/labelOriginalPrices"
+                app:layout_constraintEnd_toStartOf="@+id/labelDealPrice"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
-        <TextView
-            android:id="@+id/labelOriginalPrices"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/blue_gray"
-            app:layout_constraintBottom_toBottomOf="@+id/labelPrice"
-            app:layout_constraintEnd_toEndOf="@+id/labelOriginal"
-            app:layout_constraintStart_toStartOf="@+id/labelOriginal"
-            app:layout_constraintTop_toTopOf="@+id/labelPrice"
-            app:layout_constraintVertical_bias="1.0"
-            tools:text="100€" />
+            <TextView
+                android:id="@+id/labelOriginalPrices"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{ deal.normalPriceFormatted }"
+                android:textColor="@color/blue_gray"
+                app:layout_constraintBottom_toBottomOf="@+id/labelPrice"
+                app:layout_constraintEnd_toEndOf="@+id/labelOriginal"
+                app:layout_constraintStart_toStartOf="@+id/labelOriginal"
+                app:layout_constraintTop_toTopOf="@+id/labelPrice"
+                app:layout_constraintVertical_bias="1.0"
+                tools:text="100€" />
 
-    </android.support.constraint.ConstraintLayout>
+        </android.support.constraint.ConstraintLayout>
 
-</android.support.v7.widget.CardView>
+    </android.support.v7.widget.CardView>
+</layout>

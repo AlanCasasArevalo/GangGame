@@ -1,6 +1,6 @@
-package alancasasarevalo.com.commons.Fragments
+package alancasasarevalo.com.commons.fragments
 
-import alancasasarevalo.com.commons.Extensions.inflate
+import alancasasarevalo.com.commons.extensions.inflate
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater

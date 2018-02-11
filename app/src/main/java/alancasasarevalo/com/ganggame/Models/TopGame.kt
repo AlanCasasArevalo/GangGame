@@ -6,5 +6,10 @@ data class TopGame (var title:String,
                     var publisher: String,
                     var price: Float,
                     var position: Int,
-                    var thumb: String)
+                    var thumb: String){
+
+    val priceFormatted : String
+        get() = Formatter.pricePriceFormatted(price)
+
+}
 

@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 //It's necessary to able DataBinding
-//apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-kapt'
 
 
 android {
@@ -45,7 +45,11 @@ dependencies {
 
     //This dependency able DataBind
     kapt 'com.android.databinding:compiler:3.0.1'
+
+    //This dependency able Glide (see attached url:https://github.com/bumptech/glide)
+    implementation 'com.github.bumptech.glide:glide:4.0.0-RC1'
 }
+
 repositories {
     mavenCentral()
 }

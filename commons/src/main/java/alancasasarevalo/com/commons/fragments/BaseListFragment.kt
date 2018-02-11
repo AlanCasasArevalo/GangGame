@@ -1,4 +1,4 @@
-package alancasasarevalo.com.commons.Fragments
+package alancasasarevalo.com.commons.fragments
 
 import alancasasarevalo.com.commons.R
 import android.os.Bundle
