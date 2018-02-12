@@ -22,7 +22,6 @@
             android:layout_height="match_parent"
             android:padding="8dp">
 
-
             <ImageView
                 android:id="@+id/imgThumb"
                 android:layout_width="0dp"
@@ -36,8 +35,9 @@
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:imageURL="@{ top.thumb }"
                 android:contentDescription="@string/game_image"
-                app:srcCompat="@drawable/ic_thumb_demo" />
+                />
 
             <android.support.constraint.Guideline
                 android:id="@+id/guideline"
@@ -51,12 +51,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:maxLines="2"
+                android:text="@{ top.title }"
                 android:textColor="@android:color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:text="@{ top.title }"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Silent of the sleep" />
@@ -96,12 +96,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
                 android:maxLines="1"
+                android:text="@{ top.publisher }"
                 android:textColor="@color/blue_gray"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:text="@{ top.publisher }"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintStart_toStartOf="@+id/labelTitle"
                 app:layout_constraintTop_toTopOf="@+id/guideline3"
@@ -156,7 +155,6 @@
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
                 app:layout_constraintTop_toTopOf="@+id/guideline3"
                 tools:text="1" />
-
 
         </android.support.constraint.ConstraintLayout>
 

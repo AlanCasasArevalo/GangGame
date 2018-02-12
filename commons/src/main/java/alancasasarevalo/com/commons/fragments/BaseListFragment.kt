@@ -9,8 +9,7 @@ import kotlinx.android.synthetic.main.fragment_list.view.*
 
 abstract class BaseListFragment : GenericFragment(){
 
-    val listAdapter: RecyclerView.Adapter<*>
-        get() = getAdapter()
+    lateinit var listAdapter: RecyclerView.Adapter<*>
 
     override fun getLayoutResId(): Int {
         return R.layout.fragment_list
@@ -19,16 +18,7 @@ abstract class BaseListFragment : GenericFragment(){
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        /* Diferentes maneras de escribir lo mismo pero mas sucinto
-        view?.base_list_fragment?.adapter = listAdapter
-        view?.base_list_fragment?.layoutManager = LinearLayoutManager(context)
-        *
-        view?.base_list_fragment?.let {
-            view.base_list_fragment.adapter = listAdapter
-            view.base_list_fragment.layoutManager = LinearLayoutManager(context)
-        }
-        Es lo mismo que la parte de abajo
-        * */
+        listAdapter = getAdapter()
 
         view?.base_list_fragment?.let {
             with(view.base_list_fragment){

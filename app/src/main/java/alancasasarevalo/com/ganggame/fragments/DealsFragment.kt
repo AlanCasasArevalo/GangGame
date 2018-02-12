@@ -20,21 +20,29 @@ class DealsFragment  : BaseListFragment(){
         super.onViewCreated(view, savedInstanceState)
 
         (listAdapter as DataBindingRecyclerAdapter<Deal>).items.addAll(getDummyDeals())
+        listAdapter.notifyDataSetChanged()
 
     }
 
     fun getDummyDeals () : ArrayList<Deal>{
 
-        val dummyDeal = Deal(
-                "Counter Strike",
-                0.99F,
-                9.99F,
-                80,
-                80,
-                "http://www.gamingesports.com/wp-content/uploads/2016/01/Counter-Strike-Global-Offensive1.jpg"
-        )
+        var dummyArrayDeal = ArrayList<Deal>()
 
-        return arrayListOf(dummyDeal)
+        (0..9).forEach { i ->
+            val dummyDeal = Deal(
+                    "Counter Strike",
+                    0.99F,
+                    9.99F,
+                    80,
+                    80,
+                    "http://www.gamingesports.com/wp-content/uploads/2016/01/Counter-Strike-Global-Offensive1.jpg"
+            )
+
+
+            dummyArrayDeal.add(dummyDeal)
+        }
+
+        return dummyArrayDeal
 
     }
 
