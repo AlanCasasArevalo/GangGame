@@ -18,20 +18,29 @@ class TopOwnedFragment : BaseListFragment() {
 
         (listAdapter as DataBindingRecyclerAdapter<TopGame>).items.addAll(getDummyDeals())
 
+        listAdapter.notifyDataSetChanged()
     }
 
     fun getDummyDeals () : ArrayList<TopGame>{
 
-        val dummyTopGame = TopGame(
-                "Counter Strike",
-                14232323,
-                80,
-                "Valve",
-                40F,
-                2,
-                "http://www.gamingesports.com/wp-content/uploads/2016/01/Counter-Strike-Global-Offensive1.jpg"
-                )
-                return arrayListOf(dummyTopGame)
+        var dummyArrayTopGames = ArrayList<TopGame>()
+
+        (0..9).forEach { i ->
+            val dummyTopGame = TopGame(
+                    "Counter Strike",
+                    14232323,
+                    80,
+                    "Valve",
+                    40F,
+                    2,
+                    "http://www.gamingesports.com/wp-content/uploads/2016/01/Counter-Strike-Global-Offensive1.jpg"
+            )
+
+            dummyArrayTopGames.add(dummyTopGame)
+        }
+
+
+        return dummyArrayTopGames
 
     }
 
