@@ -6,6 +6,6 @@ object GangGameDataSource {
 
     val apiService = GangameApiService()
 
-    
+
 
 }
