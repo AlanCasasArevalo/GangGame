@@ -23,7 +23,7 @@ abstract class BaseListFragment : GenericFragment(){
         view?.base_list_fragment?.let {
             with(view.base_list_fragment){
                 adapter = listAdapter
-                layoutManager = LinearLayoutManager(context)
+                layoutManager = LinearLayoutManager(context) as RecyclerView.LayoutManager?
             }
         }
 

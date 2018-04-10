@@ -4,8 +4,6 @@ apply plugin: 'kotlin-android'
 android {
     compileSdkVersion 26
 
-
-
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 26
@@ -24,7 +22,9 @@ android {
     }
 
     publishNonDefault true
+
     flavorDimensions "default"
+
     productFlavors {
         mock { dimension "default" }
         prod { dimension "default" }
