@@ -8,6 +8,14 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'Alan1'
+            keyPassword 'test1'
+            storeFile file('1test')
+            storePassword 'test1'
+        }
+    }
     compileSdkVersion 26
     defaultConfig {
         applicationId "alancasasarevalo.com.ganggame"
@@ -24,13 +32,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
     //It's necessary to able DataBinding
-    dataBinding{
+    dataBinding {
         enabled = true
     }
 
+    publishNonDefault true
+
     flavorDimensions "default"
+
     productFlavors {
         mock { dimension "default" }
         prod { dimension "default" }
@@ -51,6 +61,12 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     //This dependency able DataBind
     kapt 'com.android.databinding:compiler:3.0.1'
-    implementation project(':gangame.sdk')
     implementation project(':commons')
+    implementation project(':gangame.sdk')
+    //This libraries able RXJava RXAndroid and RXKotlin
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.0.0'
+    //This library able Http Interceptor https://github.com/square/okhttp
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
 }

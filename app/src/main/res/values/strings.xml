@@ -7,4 +7,6 @@
     <string name="label_deal_prices">Deal Prices</string>
     <string name="label_original">Original</string>
     <string name="game_image">Imagen del juego</string>
+    <string name="error_request">Error al pedir la informacion</string>
+    <string name="label_retry">Reintentar</string>
 </resources>
